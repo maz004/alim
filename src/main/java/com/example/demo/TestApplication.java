@@ -4,6 +4,7 @@ import com.example.demo.controller.CrSalleController;
 import com.example.demo.model.CrSalle;
 import com.example.demo.model.Crenaux;
 import com.example.demo.model.Salle;
+import com.example.demo.model.Users;
 import com.example.demo.repository.CrSalleRepository;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -25,7 +26,9 @@ public class TestApplication {
     public static void main(String[] args) {
 
         SpringApplication.run(TestApplication.class, args);
-        
+        Users u = new Users();
+        u.setUsername("admin");
+        u.setPassword("admin");
 
     }
 
