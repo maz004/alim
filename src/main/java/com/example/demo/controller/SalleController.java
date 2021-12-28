@@ -48,6 +48,7 @@ public class SalleController {
     public void delete(@PathVariable(required = true) String id){
         System.out.println("id=" +id);
         Salle salle = salleRepository.findById(Long.parseLong(id));
+        
         salleRepository.delete(salle);
     }
 
