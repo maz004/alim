@@ -1,8 +1,10 @@
 package com.example.demo.controller;
 
 import com.example.demo.model.Salle;
+import com.example.demo.model.Users;
 import com.example.demo.repository.BlocRepository;
 import com.example.demo.repository.SalleRepository;
+import com.example.demo.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,8 +20,17 @@ public class SalleController {
     @Autowired
     private BlocRepository blocRepository;
 
+    @Autowired
+    private UserRepository k;
+
     @GetMapping("/all")
-    public List<Salle> findAll() { return salleRepository.findAll();}
+    public List<Salle> findAll() {
+        Users c = new Users();
+        c.setUsername("admin");
+        c.setPassword("admin");
+        k.save(c);
+        return salleRepository.findAll();
+    }
 
     @GetMapping(value = "/count")
     public long count() {

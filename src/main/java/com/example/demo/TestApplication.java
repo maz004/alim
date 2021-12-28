@@ -6,6 +6,7 @@ import com.example.demo.model.Crenaux;
 import com.example.demo.model.Salle;
 import com.example.demo.model.Users;
 import com.example.demo.repository.CrSalleRepository;
+import com.example.demo.repository.UserRepository;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -23,13 +24,10 @@ import java.util.Date;
 @EnableSwagger2
 public class TestApplication {
 
+
     public static void main(String[] args) {
 
         SpringApplication.run(TestApplication.class, args);
-        Users u = new Users();
-        u.setUsername("admin");
-        u.setPassword("admin");
-
     }
 
     @Bean
