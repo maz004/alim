@@ -25,10 +25,7 @@ public class SalleController {
 
     @GetMapping("/all")
     public List<Salle> findAll() {
-        Users c = new Users();
-        c.setUsername("admin");
-        c.setPassword("admin");
-        k.save(c);
+        
         return salleRepository.findAll();
     }
 
