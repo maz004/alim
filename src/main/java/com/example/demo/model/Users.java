@@ -13,7 +13,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 @Entity
-@Table(name = "USER")
+@Table(name = "USERS")
 public class Users implements Serializable , UserDetails {
     /**
 	 * 
