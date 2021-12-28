@@ -6,13 +6,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("blocs")
+@RequestMapping("users")
 public class UserController {
 
     @Autowired
     private UserRepository userRepository;
 
-    
+
     @PostMapping("/save")
     public void save(@RequestBody Users users)
     {userRepository.save(users);}
