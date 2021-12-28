@@ -25,10 +25,7 @@ public class SalleController {
 
     @GetMapping("/all")
     public List<Salle> findAll() {
-        Users c = new Users();
-        c.setUsername("admin");
-        c.setPassword("admin");
-        k.save(c);
+        
         return salleRepository.findAll();
     }
 
@@ -48,7 +45,7 @@ public class SalleController {
     public void delete(@PathVariable(required = true) String id){
         System.out.println("id=" +id);
         Salle salle = salleRepository.findById(Long.parseLong(id));
-        
+
         salleRepository.delete(salle);
     }
 
