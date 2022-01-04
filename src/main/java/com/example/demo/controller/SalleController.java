@@ -25,7 +25,7 @@ public class SalleController {
 
     @GetMapping("/all")
     public List<Salle> findAll() {
-        
+
         return salleRepository.findAll();
     }
 

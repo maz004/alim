@@ -30,25 +30,25 @@ function show(page) {
 	}
 	if (page == "salles") {
 		$('a').removeClass('active');
-		$('a:contains(Machines)').addClass('active');
+		$('a:contains(Salles)').addClass('active');
 		$("#main-content").load("page/salle.html");
 		event.preventDefault();
 	}
 	if (page == "blocs") {
 		$('a').removeClass('active');
-		$('a:contains(Machines)').addClass('active');
+		$('a:contains(Blocs)').addClass('active');
 		$("#main-content").load("page/bloc.html");
 		event.preventDefault();
 	}
 	if (page == "crenauxs") {
 		$('a').removeClass('active');
-		$('a:contains(Machines)').addClass('active');
+		$('a:contains(Creneauxs)').addClass('active');
 		$("#main-content").load("page/crenaux.html");
 		event.preventDefault();
 	}
 	if (page == "crsalles") {
 		$('a').removeClass('active');
-		$('a:contains(Machines)').addClass('active');
+		$('a:contains(Reservation)').addClass('active');
 		$("#main-content").load("page/crsalle.html");
 		event.preventDefault();
 	}
