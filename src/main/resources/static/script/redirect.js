@@ -52,4 +52,10 @@ function show(page) {
 		$("#main-content").load("page/crsalle.html");
 		event.preventDefault();
 	}
+	if (page == "dashboard") {
+		$('a').removeClass('active');
+		$('a:contains(Dashboard)').addClass('active');
+		$("#main-content").load("page/dashboard.html");
+		event.preventDefault();
+	}
 }

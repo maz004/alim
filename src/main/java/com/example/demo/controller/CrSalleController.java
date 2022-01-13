@@ -79,7 +79,7 @@ public class CrSalleController {
         String pp = "Non valide";
         if (username.equals(admin)) {
             crSalleRepository.delete(crs);
-        } else if (username.equals(user) && (crs.getStatus().equals(encr) || crs.getStatus().equals(pp))){
+        } else if (username.equals(user) && (crs.getStatus().equals(encr) || crs.getStatus().equals(pp))) {
             crSalleRepository.delete(crs);
         }
     }
@@ -122,6 +122,21 @@ public class CrSalleController {
             crs.setStatus("rejette");
             crSalleRepository.save(crs);
         }
+
+    }
+
+    @PostMapping(value = "/dash/{salle}")
+    public String dash(String salle) {
+        List<CrSalle> list = crSalleRepository.findAll();
+        String result = "Liste des reservation pour cette salle \n";
+        for (CrSalle i : list) {
+            if (i.getSalle().getType().equals(salle)) {
+                result += "------------------------------ \n" + "-Date : " + i.getDate() + " -Creneaux " + i.getCrenaux().getShTime() + "\n";
+            }
+        }
+
+        return result;
+
 
     }
 }
