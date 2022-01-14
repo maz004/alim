@@ -99,7 +99,7 @@ public class CrSalleController {
         String valide = "valide";
         String user = "user";
         String reject = "rejette";
-        String trt = "En cour de traitement";
+        String trt = "Non valide";
 
         if (username.equals(admin)) {
             crs.setStatus("valide");
