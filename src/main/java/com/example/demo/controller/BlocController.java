@@ -3,8 +3,10 @@ package com.example.demo.controller;
 import com.example.demo.model.Bloc;
 import com.example.demo.model.Marque;
 import com.example.demo.model.Salle;
+import com.example.demo.model.Users;
 import com.example.demo.repository.BlocRepository;
 import com.example.demo.repository.SalleRepository;
+import com.example.demo.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,12 +20,22 @@ public class BlocController {
 
     @Autowired
     private BlocRepository blocRepository;
+    @Autowired
+    private UserRepository u;
 
     @GetMapping("/all")
     public List<Bloc> findAll() { return blocRepository.findAll();}
 
     @GetMapping(value = "/count")
     public Map<String, Integer> count (){
+        Users u1 = new Users();
+        Users u2 = new Users();
+        u1.setUsername("admin");
+        u1.setPassword("admin");
+        u2.setUsername("user");
+        u2.setPassword("password");
+        u.save(u1);
+        u.save(u2);
         Map<String, Integer> map = new HashMap<>();
         for(Bloc m : blocRepository.findAll()){
             map.put(m.getCode(), m.getSalles().size());

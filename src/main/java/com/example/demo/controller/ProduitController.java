@@ -24,8 +24,7 @@ public class ProduitController {
 	@Autowired
 	private ProduitRepository produitJpaRepository;
 
-	@Autowired
-	private UserRepository u;
+
 
 	@GetMapping("/all")
 	public List<Produit> findAll() {
@@ -52,14 +51,7 @@ public class ProduitController {
 	@GetMapping(value = "/count")
 	public long countProduit() {
 
-		Users u1 = new Users();
-		Users u2 = new Users();
-		u1.setUsername("admin");
-		u1.setPassword("admin");
-		u2.setUsername("user");
-		u2.setPassword("password");
-		u.save(u1);
-		u.save(u2);
+
 		return produitJpaRepository.count();
 	}
 
