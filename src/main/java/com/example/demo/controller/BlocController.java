@@ -28,14 +28,7 @@ public class BlocController {
 
     @GetMapping(value = "/count")
     public Map<String, Integer> count (){
-        Users u1 = new Users();
-        Users u2 = new Users();
-        u1.setUsername("admin");
-        u1.setPassword("admin");
-        u2.setUsername("user");
-        u2.setPassword("password");
-        u.save(u1);
-        u.save(u2);
+        
         Map<String, Integer> map = new HashMap<>();
         for(Bloc m : blocRepository.findAll()){
             map.put(m.getCode(), m.getSalles().size());
