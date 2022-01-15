@@ -244,6 +244,7 @@ body {
     border-radius: 0 4px 4px 0px;
     width: 35px;
     transition-delay: 0.3s;
+    background: #000000;
 }
 
 .page-wrapper.toggled #show-sidebar {
