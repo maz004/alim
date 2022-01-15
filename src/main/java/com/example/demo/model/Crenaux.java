@@ -13,6 +13,7 @@ public class Crenaux {
     private long id;
     private Time heureDebut;
     private Time heureFin;
+    private String shTime;
     @OneToMany(mappedBy = "crenaux")
     @JsonIgnore
     private List<CrSalle> crsalles;
@@ -52,12 +53,21 @@ public class Crenaux {
         this.heureFin = heureFin;
     }
 
+    public String getShTime() {
+        return shTime;
+    }
+
+    public void setShTime(String shTime) {
+        this.shTime = shTime;
+    }
+
     @Override
     public String toString() {
         return "Crenaux{" +
                 "id=" + id +
                 ", heureDebut=" + heureDebut +
                 ", heureFin=" + heureFin +
+                ", shTime='" + shTime + '\'' +
                 ", crsalles=" + crsalles +
                 '}';
     }

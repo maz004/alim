@@ -1,48 +1,47 @@
 package com.example.demo.model;
 
-import org.hibernate.annotations.Generated;
-
 import javax.persistence.*;
 import java.util.Date;
 
 @Entity
 public class CrSalle {
     @EmbeddedId
-    private SalleCrenauKey id;
+    private Key id;
     @Temporal(TemporalType.DATE)
-    private Date date;
+    private Date a_date;
     @JoinColumn(name ="salle", referencedColumnName = "id", insertable = false, updatable = false)
     @ManyToOne(cascade = CascadeType.PERSIST)
     private Salle salle;
     @JoinColumn(name ="crenaux", referencedColumnName = "id", insertable = false, updatable = false)
     @ManyToOne(cascade = CascadeType.PERSIST)
     private Crenaux crenaux;
+    private String status = "Non valide";
 
 
     public CrSalle() {
     }
 
-    public CrSalle(SalleCrenauKey id, Date date, Salle salle, Crenaux crenaux) {
+    public CrSalle(Key id, Date date, Salle salle, Crenaux crenaux) {
         this.id = id;
-        this.date = date;
+        this.a_date = date;
         this.salle = salle;
         this.crenaux = crenaux;
     }
 
-    public SalleCrenauKey getId() {
+    public Key getId() {
         return id;
     }
 
-    public void setId(SalleCrenauKey id) {
+    public void setId(Key id) {
         this.id = id;
     }
 
     public Date getDate() {
-        return date;
+        return a_date;
     }
 
     public void setDate(Date date) {
-        this.date = date;
+        this.a_date = date;
     }
 
     public Salle getSalle() {
@@ -61,13 +60,30 @@ public class CrSalle {
         this.crenaux = crenaux;
     }
 
+    public Date getA_date() {
+        return a_date;
+    }
+
+    public void setA_date(Date a_date) {
+        this.a_date = a_date;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
     @Override
     public String toString() {
         return "CrSalle{" +
                 "id=" + id +
-                ", date=" + date +
+                ", a_date=" + a_date +
                 ", salle=" + salle +
                 ", crenaux=" + crenaux +
+                ", status='" + status + '\'' +
                 '}';
     }
 }

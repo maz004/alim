@@ -104,6 +104,6 @@ box-shadow: none;
 }
 
 .sidebar-menu li .active {
-    color: #16c7ff !important;
-    text-shadow: 0px 0px 10px rgba(22, 199, 255, 0.5);
+    color: #FFA500 !important;
+    text-shadow: 0px 0px 10px #FFA500;
 }

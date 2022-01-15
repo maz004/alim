@@ -14,6 +14,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 @Entity
 @Table(name = "USERS")
+
 public class Users implements Serializable , UserDetails {
     /**
 	 * 
@@ -62,4 +63,5 @@ public class Users implements Serializable , UserDetails {
     public void setPassword(String password) {
         this.password = password;
     }
+
 }

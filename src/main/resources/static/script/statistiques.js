@@ -49,6 +49,18 @@ $(document).ready(function () {
         }
     });
     $.ajax({
+        url: 'crsalles/count',
+        data: '',
+        type: 'GET',
+        success: function (data) {
+            $('#reservation').html(data);
+        },
+        error: function (jqXHR, textStatus,
+                         errorThrown) {
+            console.log(textStatus);
+        }
+    });
+    $.ajax({
         url: 'salles/count',
         data: '',
         type: 'GET',

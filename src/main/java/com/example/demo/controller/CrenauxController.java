@@ -24,7 +24,12 @@ public class CrenauxController {
 
     @PostMapping("/save")
     public void save(@RequestBody Crenaux cr)
-    {crenauxRepository.save(cr);}
+    {
+        String str;
+        str = cr.getHeureDebut().toString() + ">" + cr.getHeureFin().toString();
+        cr.setShTime(str);
+        crenauxRepository.save(cr);
+    }
 
     @DeleteMapping(value = "/delete/{id}")
     public void delete(@PathVariable(required = true) String id){

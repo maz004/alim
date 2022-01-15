@@ -20,12 +20,12 @@ $(document)
                         },
                         {
                             "render" : function() {
-                                return '<button type="button" class="btn btn-outline-danger supprimer">Supprimer</button>';
+                                return '<button type="button" class="btn btn-danger supprimer">Supprimer</button>';
                             }
                         },
                         {
                             "render" : function() {
-                                return '<button type="button" class="btn btn-outline-secondary modifier">Modifier</button>';
+                                return '<button type="button" class="btn btn-secondary modifier">Modifier</button>';
                             }
                         } ]
 

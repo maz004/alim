@@ -1,3 +1,4 @@
+<div style="background-image: url('mimi.jpg');">
 <div class="container-fluid" style="margin-top: 5%;">
 	<div class="">
 		<p class="h2 text-center text-dark text-uppercase font-weight-bold">Statistiques
@@ -6,41 +7,42 @@
 		<section class="statistic statistic2">
 			<div class="container">
 				<div class="row">
-					<a href="./index.html"  onclick="show('machine')" class="col-md-6 col-lg-3">
-						<div class="statistic__item statistic__item--green">
-							<h2 id="machine" class="number">0</h2>
-							<span  class="desc">machines</span>
-							<div class="icon">
-								<i class="zmdi zmdi-settings"></i>
-							</div>
-						</div>
-					</a>
-					<a href="./index.html"  onclick="show('salle')" class="col-md-6 col-lg-3">
-						<div class="statistic__item statistic__item--orange">
-							<h2 id="salle" class="number">0</h2>
-							<span  class="desc">salles</span>
-							<div class="icon">
-								<i class="zmdi zmdi-settings"></i>
-							</div>
-						</div>
-					</a>
-					<a href="./index.html"  onclick="show('crenaux')" class="col-md-6 col-lg-3">
-						<div class="statistic__item statistic__item--blue">
-							<h2 id="crenaux" class="number">0</h2>
-							<span  class="desc">creneauxs</span>
-							<div class="icon">
-								<i class="zmdi zmdi-settings"></i>
-							</div>
-						</div>
-					</a> <a href="./index.html"  onclick="show('produit')" class="col-md-6 col-lg-3">
-					<div class="statistic__item statistic__item--red">
-						<h2 id="produit" class="number">0</h2>
-						<span  class="desc">produits</span>
-						<div class="icon">
-							<i class="zmdi zmdi-settings"></i>
+					<div class="col-md-3">
+						<div class="card-counter info">
+							<i class="fa fa-home"></i>
+							<span id="salle" class="count-numbers">12</span>
+							<span class="count-name">Salles</span>
 						</div>
 					</div>
-				</a>
+
+					<div class="col-md-3">
+						<div class="card-counter danger">
+							<i class="fa fa-clock"></i>
+							<span id = "crenaux"class="count-numbers">599</span>
+							<span class="count-name">Creneauxs</span>
+						</div>
+					</div>
+
+					<div class="col-md-3">
+						<div class="card-counter success">
+							<i class="fa fa-users"></i>
+							<span id = "reservation"class="count-numbers">6875</span>
+							<span class="count-name">Reservation</span>
+						</div>
+					</div>
+
+					<div class="col-md-3">
+						<div class="card-counter info">
+							<i class="fa fa-desktop"></i>
+							<span id = "machine" class="count-numbers">35</span>
+							<span class="count-name">Machines</span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+	</div>
 				</div>
 				<div class="card-body container-fluid">
 					<div class="row">
