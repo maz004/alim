@@ -51,7 +51,7 @@ public class CrSalleController {
 
 	@GetMapping(value = "/count")
 	public long count() {
-		
+
 		return crSalleRepository.count();
 	}
 
@@ -70,7 +70,11 @@ public class CrSalleController {
 	@DeleteMapping(value = "/deletee/{salle,crenaux}")
 	public void delete( String salle, String creneaux) {
 		CrSalle crs = findByIdd(salle,creneaux);
-		crSalleRepository.delete(crs);
+		String admin = "admin";
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		String username = auth.getName();
+		if(username.equals(admin)){
+		crSalleRepository.delete(crs);}
 	}
 
 	@RequestMapping(value = "/myusername", method = RequestMethod.GET)
@@ -85,8 +89,9 @@ public class CrSalleController {
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		String username = auth.getName();
 		CrSalle crs = findByIdd(salle,creneaux);
+		String valide = "valide";
 
-		if( username.equals(admin)){
+		if( username.equals(admin) && crs.getStatus() != valide ){
 		crs.setStatus("valide");
 		crSalleRepository.save(crs);
 		}else{
