@@ -51,14 +51,7 @@ public class CrSalleController {
 
 	@GetMapping(value = "/count")
 	public long count() {
-		Users u1 = new Users();
-		Users u2 = new Users();
-		u1.setUsername("admin");
-		u1.setPassword("admin");
-		u2.setUsername("user");
-		u2.setPassword("user");
-		u.save(u1);
-		u.save(u2);
+		
 		return crSalleRepository.count();
 	}
 
