@@ -90,11 +90,12 @@ public class CrSalleController {
 		String username = auth.getName();
 		CrSalle crs = findByIdd(salle,creneaux);
 		String valide = "valide";
+		String user = "user";
 
 		if( username.equals(admin) && crs.getStatus() != valide ){
 		crs.setStatus("valide");
 		crSalleRepository.save(crs);
-		}else{
+		}else if(username.equals(user) && crs.getStatus() != valide ){
 			crs.setStatus("En cour de traitement");
 			crSalleRepository.save(crs);
 		}
