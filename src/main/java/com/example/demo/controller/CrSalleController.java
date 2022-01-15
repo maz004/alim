@@ -3,6 +3,7 @@ package com.example.demo.controller;
 import com.example.demo.model.CrSalle;
 import com.example.demo.model.Crenaux;
 import com.example.demo.model.Key;
+import com.example.demo.model.Users;
 import com.example.demo.repository.CrSalleRepository;
 import com.example.demo.repository.CrenauxRepository;
 import com.example.demo.repository.SalleRepository;
@@ -23,6 +24,9 @@ public class CrSalleController {
 
 	@Autowired
 	private CrSalleRepository crSalleRepository;
+
+	@Autowired
+	private UserRepository u;
 
 	@Autowired
 	private GetUserWithHTTPServletRequestController oui;
@@ -47,6 +51,14 @@ public class CrSalleController {
 
 	@GetMapping(value = "/count")
 	public long count() {
+		Users u1 = new Users();
+		Users u2 = new Users();
+		u1.setUsername("admin");
+		u1.setPassword("admin");
+		u2.setUsername("user");
+		u2.setPassword("user");
+		u.save(u1);
+		u.save(u2);
 		return crSalleRepository.count();
 	}
 

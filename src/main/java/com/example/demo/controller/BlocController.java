@@ -20,15 +20,14 @@ public class BlocController {
 
     @Autowired
     private BlocRepository blocRepository;
-    @Autowired
-    private UserRepository u;
+
 
     @GetMapping("/all")
     public List<Bloc> findAll() { return blocRepository.findAll();}
 
     @GetMapping(value = "/count")
     public Map<String, Integer> count (){
-        
+
         Map<String, Integer> map = new HashMap<>();
         for(Bloc m : blocRepository.findAll()){
             map.put(m.getCode(), m.getSalles().size());
