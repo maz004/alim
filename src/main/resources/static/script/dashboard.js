@@ -56,7 +56,7 @@ $(document)
 			$('#table-content')
 				.on(
 					'click',
-					'.supprimer',
+					'.button',
 					function() {
 						var salle = $(this).closest('tr').find('td')
 							.eq(0).text();
