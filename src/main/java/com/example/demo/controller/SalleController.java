@@ -21,8 +21,6 @@ public class SalleController {
     @Autowired
     private BlocRepository blocRepository;
 
-
-
     @Autowired
     private UserRepository userRepository;
 
